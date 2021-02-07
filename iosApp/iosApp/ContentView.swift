@@ -25,6 +25,18 @@ func greet() -> String {
 //    let nestUser =  repository.getNestUser()
 //    nestUser.varUser.id = "test"
     
+//    GlobalObject().add()
+    
+//    DispatchQueue.global().async {
+//        print(Thread.current.isMainThread)
+//        GlobalObjectKt.globalField = 200
+//        print(GlobalObjectKt.globalField)
+//    }
+
+    print(Thread.current.isMainThread)
+    GlobalObjectKt.globalField = 200
+    print(GlobalObjectKt.globalField)
+
     return Greeting().greeting()
 }
 
