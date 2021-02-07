@@ -36,6 +36,13 @@ class SampleRepository {
       freeze()
     }
   }
+
+  fun getNestUser(): NestUser {
+    return NestUser(
+      user = getUser(),
+      varUser = getVarUser()
+    ).apply { freeze() }
+  }
 }
 
 data class User(
@@ -46,4 +53,9 @@ data class User(
 data class VarUser(
   var id: String,
   var name: String
+)
+
+data class NestUser(
+  var user: User,
+  var varUser: VarUser
 )
